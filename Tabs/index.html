@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>The Vue Instance</title>
+    </head>
+    <body>
+        <div class="nav-bar"><span><a :href="link">Vue Mastery</a></span></div>
+        <div id="app">
+            
+            <div class="cart">
+                <p>Cart({{cart.length}})</p>
+            </div>
+            <product 
+                :premium="true"
+                :details="['80% cotton', '20% polyster', 'Gender-neutral']"
+                @add-to-cart="addToCart"
+                @remove-from-cart="removeFromCart"
+            >
+            </product>
+            <hr/>
+            <product 
+                :premium="!true"
+                :details="['99% cotton', '1% polyster', 'Gender-neutral']"
+                @add-to-cart="addToCart"
+                @remove-from-cart="removeFromCart"
+            >
+            </product>
+
+        </div>
+        <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
